@@ -1,18 +1,59 @@
-/* 
-Copied from Google Fonts.
+body {
+  margin: 0;
+}
 
-.playfair-display-<uniquifier> {
+.roboto-400 {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+.playfair-display-400 {
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: 400;
   font-style: normal;
 }
 
-.roboto-<uniquifier> {
-  font-family: "Roboto", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
-} */
+.name {
+  color: white;
+}
+
+.header-photo {
+  max-width: 200px;
+}
+
+.socials-icon {
+  width: 32px;
+}
+
+.project-card-icon {
+  width: 24px;
+}
+
+.project-screenshot {
+  max-width: 220px;
+}
+
+.contact-icon {
+  width: 16px;
+  filter: invert(); /* invert black -> white */
+}
+
+header {
+  background: #0891b3;
+}
+
+main {
+}
+
+footer {
+  background: #0891b3;
+  color: white;
+}
+
+.footer-photo {
+  max-width: 360px;
+}
