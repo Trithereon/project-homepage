@@ -29,12 +29,41 @@ body {
   width: 32px;
 }
 
+.project-card {
+  max-width: 220px;
+  box-shadow: 2px 2px 8px grey;
+  display: grid;
+}
+
+.project-card > .details-container {
+  padding: 1rem;
+  display: grid;
+  grid-template-areas:
+    "screenshot"
+    "title-line"
+    "description";
+}
+
+.project-card > .details-container > .title-line {
+  grid-area: title-line;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.project-card > .details-container > .project-description {
+  grid-area: description;
+}
+
 .project-card-icon {
   width: 24px;
 }
 
 .project-screenshot {
   max-width: 220px;
+  max-height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid black;
 }
 
 .contact-icon {
@@ -47,6 +76,13 @@ header {
 }
 
 main {
+  display: grid;
+  grid-template-areas: "section-title section-title section-title";
+  gap: 2rem;
+}
+
+main > .section-title {
+  grid-area: section-title;
 }
 
 footer {
