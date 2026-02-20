@@ -17,21 +17,64 @@ body {
   font-style: normal;
 }
 
-.name {
-  color: white;
-}
-
-.header-photo {
-  max-width: 200px;
-}
-
 .socials-icon {
   width: 32px;
 }
 
+.about-wrapper {
+  display: grid;
+  grid-template-areas: "photo about";
+  align-items: center;
+}
+
+.about-wrapper > .header-photo {
+  max-height: 600px;
+  object-fit: contain;
+  grid-area: photo;
+  justify-self: right;
+  margin: 2rem 0;
+  z-index: 1;
+}
+
+.about-wrapper > .name {
+  grid-area: photo;
+  color: white;
+  position: relative;
+  top: 16.4rem;
+  left: -2.5rem;
+  justify-self: right;
+  transform: scaleY(1.1);
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 6px #3b3b3b;
+  font-size: 3.2rem;
+  z-index: 2;
+}
+
+.about-wrapper > .about-container {
+  background: white;
+  grid-area: about;
+  justify-self: left;
+  padding: 2rem 1rem;
+  max-width: 720px;
+  min-width: 320px;
+}
+
+.about-card {
+  line-height: 1.5rem;
+}
+
+.about-card > .links-line {
+  display: flex;
+  justify-content: right;
+  gap: 0.6rem;
+}
+
+.box-shadow {
+  box-shadow: 1px 1px 7px #1f1f31;
+}
+
 .project-card {
-  max-width: 220px;
-  box-shadow: 2px 2px 8px grey;
+  max-width: 480px;
   display: grid;
 }
 
@@ -60,8 +103,9 @@ body {
 }
 
 .project-screenshot {
-  max-width: 220px;
-  max-height: 200px;
+  max-height: 480px;
+  overflow: hidden;
+  object-position: center;
   object-fit: cover;
   border-bottom: 1px solid black;
 }
@@ -72,17 +116,43 @@ body {
 }
 
 header {
+  position: relative;
+  background: transparent;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: #0891b3;
+  transform: skewY(-11deg);
+  transform-origin: top left;
+  z-index: -1;
+  box-shadow: 1px 1px 7px #1f1f31;
 }
 
 main {
-  display: grid;
-  grid-template-areas: "section-title section-title section-title";
+  display: flex;
+  flex-direction: column;
   gap: 2rem;
+  margin: 1rem 3rem;
+  justify-content: center;
+  gap: 1rem;
 }
 
 main > .section-title {
   grid-area: section-title;
+}
+
+.projects-container {
+  display: flex;
+}
+
+.section-title {
+  font-size: 2.2rem;
 }
 
 footer {
