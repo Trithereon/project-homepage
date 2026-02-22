@@ -39,6 +39,7 @@ a {
 }
 
 .contact-icon {
+  display: none;
   width: 32px;
   filter: invert(); /* invert black -> white */
 }
@@ -66,6 +67,7 @@ header::before {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  margin: 0 6vw 60px;
 }
 
 .background-slanted {
@@ -95,6 +97,7 @@ header::before {
   display: inline-block;
   position: relative;
   width: 100%;
+  margin: 0 3vw;
 }
 
 .photo-container > .header-photo {
@@ -116,15 +119,16 @@ header::before {
   transform: scaleY(1.1);
   letter-spacing: 2px;
   text-shadow: 0px 2px 3px #5e5e5b;
-  font-size: clamp(1rem, 3vw, 3.2rem);
+  font-size: 18vw;
+  width: 100%;
 }
 
 .about-wrapper > .about-container {
   background: white;
-  padding: 2rem 1rem;
   max-width: 100%;
   height: 100%;
-  box-shadow: 1px 1px 7px #1f1f31;
+  padding: 0;
+  box-shadow: none;
 }
 
 .about-card {
@@ -136,6 +140,10 @@ header::before {
   font-size: 1.3rem;
 }
 
+.about-card > .section-title {
+  margin: 10px;
+}
+
 .description,
 .project-description {
   color: #585858;
@@ -143,8 +151,8 @@ header::before {
 
 .about-card > .links-line {
   display: flex;
-  justify-content: right;
-  gap: 0.6rem;
+  justify-content: center;
+  gap: 1.6rem;
 }
 
 main {
@@ -152,13 +160,14 @@ main {
   flex-direction: column;
   gap: 2rem;
   justify-content: center;
-  gap: 1rem;
+  margin: 0 6vw 200px;
 }
 
 .section-title {
   display: block;
   font-size: 3rem;
   margin-bottom: 0;
+  text-align: center;
 }
 
 .project-title {
@@ -189,8 +198,9 @@ main {
 }
 
 .project-screenshot {
-  max-height: 480px;
-  object-fit: cover;
+  height: 300px;
+  width: 100%;
+  object-fit: contain;
 }
 
 .project-card > .details-container {
@@ -222,8 +232,13 @@ footer {
   color: white;
 }
 
+.contact-wrapper > .photo-container {
+  width: 100%;
+}
+
 .contact-container {
   overflow: auto;
+  margin: 0 6vw;
 }
 
 .contact-container > .line {
@@ -233,7 +248,7 @@ footer {
 }
 
 .line > .contact-text {
-  margin: 8px;
+  margin: 6px 0;
 }
 
 .contact-container > .links-line {
@@ -241,10 +256,11 @@ footer {
   justify-content: center;
   align-items: center;
   gap: 32px;
+  margin: 30px 0 100px;
 }
 
 h3.contact-text {
-  font-size: 1.6rem;
+  font-size: 1.2rem;
 }
 
 p.contact-text {
@@ -254,6 +270,17 @@ p.contact-text {
 .footer-photo {
   display: block;
   width: 100%;
+}
+
+/* Tablet size */
+@media (min-width: 601px) {
+  .about-wrapper,
+  main {
+    margin: 0 18vw 1vh; /* TODO: adjust values */
+  }
+  .contact-container {
+    margin: 0 18vw; /* TODO: adjust values */
+  }
 }
 
 /* Desktop size */
@@ -266,67 +293,3 @@ p.contact-text {
     margin: 0 18vw; /* TODO: adjust values */
   }
 }
-
-/* Tablet size */
-@media (min-width: 601px) and (max-width: 1200px) {
-  .about-wrapper,
-  main {
-    margin: 0 18vw 1vh; /* TODO: adjust values */
-  }
-  .contact-container {
-    margin: 0 18vw; /* TODO: adjust values */
-  }
-}
-
-/* Mobile size */
-@media (max-width: 600px) {
-  .about-wrapper {
-    margin: 0 6vw 60px;
-  }
-  main {
-    margin: 0 6vw 200px;
-  }
-  .section-title {
-    text-align: center;
-  }
-  .about-wrapper .photo-container {
-    margin: 0 3vw;
-  }
-  .photo-container > .name {
-    font-size: 18vw;
-    width: 100%;
-  }
-  .about-wrapper > .about-container {
-    padding: 0;
-    box-shadow: none;
-  }
-  .about-card > .section-title {
-    margin: 10px;
-  }
-  .about-card > .links-line {
-    display: flex;
-    justify-content: center;
-    gap: 1.6rem;
-  }
-  .projects-wrapper {
-    gap: 10vw;
-  }
-  .contact-wrapper > .photo-container {
-    width: 100%;
-  }
-  .contact-container {
-    margin: 0 6vw;
-  }
-  .contact-icon {
-    display: none;
-  }
-  h3.contact-text {
-    font-size: 1.3rem;
-  }
-  .line > .contact-text {
-    margin: 6px 0;
-  }
-  .contact-container > .links-line {
-    margin: 30px 0 100px;
-  }
-} /* TODO: Fix project images and make them responsive. */
