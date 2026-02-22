@@ -25,6 +25,10 @@ body {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 .socials-icon {
   width: 50px;
   filter: brightness(0%);
@@ -205,6 +209,10 @@ main {
   justify-content: space-between;
 }
 
+.project-card-icon {
+  margin-left: 6px;
+}
+
 .project-card > .details-container > .project-description {
   grid-area: description;
 }
@@ -321,4 +329,4 @@ p.contact-text {
   .contact-container > .links-line {
     margin: 30px 0 100px;
   }
-}
+} /* TODO: Fix project images and make them responsive. */
