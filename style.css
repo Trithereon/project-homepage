@@ -1,13 +1,17 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
 * {
   font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
   font-variation-settings: "wdth" 100;
-}
-
-body {
-  margin: 0;
 }
 
 .playfair-display-400 {
@@ -17,74 +21,126 @@ body {
   font-style: normal;
 }
 
-.socials-icon {
-  width: 42px;
+body {
+  margin: 0;
 }
 
-.about-wrapper,
-main,
-.contact-wrapper {
-  margin: 0 12rem 1rem;
+.socials-icon {
+  width: 50px;
+  filter: brightness(0%);
 }
+
+.project-card-icon {
+  width: 32px;
+}
+
+.contact-icon {
+  width: 32px;
+  filter: invert(); /* invert black -> white */
+}
+
+/* header {
+  position: relative;
+  background: transparent;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0891b3;
+  transform: skewY(-11deg);
+  transform-origin: top left;
+  z-index: -1;
+  box-shadow: 1px 1px 7px #1f1f31;
+} */
 
 .about-wrapper {
-  display: grid;
-  grid-template-areas: "photo about";
-  place-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
-.about-wrapper > .photo-container {
-  grid-area: photo;
-  display: grid;
-  place-items: center;
-}
-
-.about-wrapper > .photo-container > .header-photo {
-  max-width: 100%;
-  object-fit: contain;
-  justify-self: right;
-  margin: 2rem 0;
-  z-index: 1;
-}
-
-.about-wrapper > .photo-container > .name {
-  color: white;
+.background-slanted {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   position: relative;
-  top: -9rem;
-  left: -2.5rem;
-  justify-self: right;
+  background: transparent;
+}
+
+.background-slanted::before {
+  content: "";
+  position: absolute;
+  top: -10vw;
+  left: -6vw;
+  width: 100vw;
+  height: 100%;
+  background: #0891b3;
+  transform: skewY(-32deg);
+  transform-origin: top left;
+  z-index: -1;
+  box-shadow: 1px 1px 7px #1f1f31;
+  margin: 0;
+}
+
+.background-slanted > .photo-container {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+
+.photo-container > .header-photo {
+  display: block;
+  width: 100%;
+  object-fit: contain;
+  margin: 2rem 0;
+  box-shadow: 1px 1px 7px #1f1f31;
+}
+
+.photo-container > .name {
+  color: white;
+  position: absolute;
+  margin: 0;
+  bottom: 36px;
+  right: 0;
+  left: 2vw;
+  text-align: left;
   transform: scaleY(1.1);
   letter-spacing: 2px;
-  text-shadow: 1px 1px 6px #3b3b3b;
-  font-size: 3.2rem;
-  z-index: 2;
+  text-shadow: 5px 0px 10px #000000;
+  font-size: clamp(1rem, 3vw, 3.2rem);
 }
 
 .about-wrapper > .about-container {
   background: white;
-  grid-area: about;
-  justify-self: left;
   padding: 2rem 1rem;
   max-width: 100%;
-  min-width: 320px;
+  height: 100%;
+  box-shadow: 1px 1px 7px #1f1f31;
 }
 
 .about-card {
-  line-height: 2rem;
+  overflow: auto;
 }
 
 .about-card > .description {
+  line-height: 2rem;
   font-size: 1.3rem;
+}
+
+.description,
+.project-description {
+  color: #585858;
 }
 
 .about-card > .links-line {
   display: flex;
   justify-content: right;
   gap: 0.6rem;
-}
-
-.box-shadow {
-  box-shadow: 1px 1px 7px #1f1f31;
 }
 
 main {
@@ -95,12 +151,10 @@ main {
   gap: 1rem;
 }
 
-main > .section-title {
-  margin-bottom: 0;
-}
-
 .section-title {
-  font-size: 2.2rem;
+  display: block;
+  font-size: 3rem;
+  margin-bottom: 0;
 }
 
 .project-title {
@@ -115,9 +169,10 @@ main > .section-title {
 }
 
 .project-card {
-  max-width: 480px;
+  width: 100%;
   display: grid;
   place-items: center;
+  box-shadow: 1px 1px 7px #1f1f31;
 }
 
 .project-card > .screenshot-container {
@@ -154,44 +209,116 @@ main > .section-title {
   grid-area: description;
 }
 
-.details-container .links-container {
-  display: flex;
-  gap: 1rem;
-}
-
-.project-card-icon {
-  width: 32px;
-}
-
-.contact-icon {
-  width: 16px;
-  filter: invert(); /* invert black -> white */
-}
-
-header {
-  position: relative;
-  background: transparent;
-}
-
-header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #0891b3;
-  transform: skewY(-11deg);
-  transform-origin: top left;
-  z-index: -1;
-  box-shadow: 1px 1px 7px #1f1f31;
-}
-
 footer {
   background: #0891b3;
   color: white;
 }
 
+.contact-container {
+  overflow: auto;
+}
+
+.contact-container > .line {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.line > .contact-text {
+  margin: 8px;
+}
+
+.contact-container > .links-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+
+h3.contact-text {
+  font-size: 1.6rem;
+}
+
+p.contact-text {
+  font-size: 1rem;
+}
+
 .footer-photo {
-  max-width: 360px;
+  display: block;
+  width: 100%;
+}
+
+/* Desktop size */
+@media (min-width: 1201px) {
+  .about-wrapper,
+  main {
+    margin: 0 18vw 1vh; /* TODO: adjust values */
+  }
+  .contact-container {
+    margin: 0 18vw; /* TODO: adjust values */
+  }
+}
+
+/* Tablet size */
+@media (min-width: 601px) and (max-width: 1200px) {
+  .about-wrapper,
+  main {
+    margin: 0 18vw 1vh; /* TODO: adjust values */
+  }
+  .contact-container {
+    margin: 0 18vw; /* TODO: adjust values */
+  }
+}
+
+/* Mobile size */
+@media (max-width: 600px) {
+  .about-wrapper {
+    margin: 0 6vw 60px;
+  }
+  main {
+    margin: 0 6vw 200px;
+  }
+  .section-title {
+    text-align: center;
+  }
+  .about-wrapper .photo-container {
+    margin: 0 3vw;
+  }
+  .photo-container > .name {
+    font-size: 18vw;
+    width: 100%;
+  }
+  .about-wrapper > .about-container {
+    padding: 0;
+    box-shadow: none;
+  }
+  .about-card > .section-title {
+    margin: 10px;
+  }
+  .about-card > .links-line {
+    display: flex;
+    justify-content: center;
+    gap: 1.6rem;
+  }
+  .projects-wrapper {
+    gap: 10vw;
+  }
+  .contact-wrapper > .photo-container {
+    width: 100%;
+  }
+  .contact-container {
+    margin: 0 6vw;
+  }
+  .contact-icon {
+    display: none;
+  }
+  h3.contact-text {
+    font-size: 1.3rem;
+  }
+  .line > .contact-text {
+    margin: 6px 0;
+  }
+  .contact-container > .links-line {
+    margin: 30px 0 100px;
+  }
 }
