@@ -98,6 +98,7 @@ header::before {
   position: relative;
   width: 100%;
   margin: 0 3vw;
+  z-index: 2;
 }
 
 .photo-container > .header-photo {
@@ -274,12 +275,49 @@ p.contact-text {
 
 /* Tablet size */
 @media (min-width: 601px) {
-  .about-wrapper,
+  .about-wrapper {
+    margin: 0 1vw 1vh;
+  }
   main {
-    margin: 0 18vw 1vh; /* TODO: adjust values */
+    margin: 0 2vw 1vh;
   }
   .contact-container {
-    margin: 0 18vw; /* TODO: adjust values */
+    margin: 0 2vw;
+  }
+  .background-slanted::before {
+    top: 0;
+    left: -1vw;
+    transform: skewY(-18deg);
+  }
+  .background-slanted > .photo-container {
+    width: 49vw;
+    margin: 0 3vw;
+  }
+  .photo-container > .name {
+    color: white;
+    position: absolute;
+    margin: 0;
+    bottom: 50vw;
+    left: 39.5vw;
+    text-align: right;
+    font-size: 6.2vw;
+  }
+  .about-wrapper > .about-container {
+    display: inline-block;
+    background: white;
+    position: relative;
+    top: -30vw;
+    width: 100%;
+    padding: 0;
+    box-shadow: 1px 1px 7px #1f1f31;
+    margin: 0 3vw;
+    z-index: 1;
+  }
+  .about-card {
+    margin: 4vw;
+  }
+  .about-card > .section-title {
+    margin-top: 10vw;
   }
 }
 
