@@ -212,7 +212,7 @@ footer {
 
 .contact-container {
   overflow: auto;
-  margin: 0 6vw;
+  margin: 0;
 }
 
 .contact-container > .line {
@@ -248,15 +248,11 @@ p.contact-text {
 
 /* Tablet size */
 @media (min-width: 601px) {
+  header {
+    height: min(45rem, 60vh);
+  }
   .about-wrapper {
-    margin: 0 1vw 5vh;
-    height: 55vh;
-  }
-  main {
-    margin: 0 2vw 1vh;
-  }
-  .contact-container {
-    margin: 0 2vw;
+    margin: 0 1vw;
   }
   .section-title {
     font-size: 2.5rem;
@@ -266,16 +262,17 @@ p.contact-text {
     top: 0;
     left: -1vw;
     transform: skewY(-16deg);
-    height: 100%;
+    height: 110%;
     z-index: -1;
   }
   .about-wrapper > .photo-container {
     background: transparent;
     width: 49vw;
+    padding-top: 20px;
   }
   .photo-container > .name {
     margin: 0;
-    bottom: 42vw;
+    bottom: 41vw;
     left: 41vw;
     text-align: right;
     font-size: 7.5vw;
@@ -295,7 +292,7 @@ p.contact-text {
   }
   .spacer {
     display: block;
-    width: 40vw;
+    width: 39.5vw;
     height: 35vw;
     float: left;
   }
@@ -308,6 +305,40 @@ p.contact-text {
   .about-card > .links-line {
     justify-content: right;
     padding-right: 6vw;
+  }
+  main {
+    margin: 0 7vw 165px;
+  }
+  main > .section-title {
+    text-align: left;
+  }
+  .projects-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .contact-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 0 min(46px, 6vw) 0 min(46px, 6vw);
+    gap: 1.2rem;
+  }
+  .contact-container {
+    padding-top: 48px;
+    min-width: 298px;
+  }
+  .contact-container > .section-title,
+  .contact-container > .links-line {
+    text-align: left;
+    justify-content: left;
+  }
+  .contact-icon {
+    display: block;
+  }
+  .socials-icon {
+    width: 40px;
+  }
+  .contact-wrapper > .photo-container {
+    padding: min(46px, 6vw) 0 min(46px, 6vw);
   }
 }
 
