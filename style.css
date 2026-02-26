@@ -44,61 +44,33 @@ a {
   filter: invert(); /* invert black -> white */
 }
 
-/* header {
-  position: relative;
-  background: transparent;
-}
-
-header::before {
+.about-wrapper > .photo-container::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  left: -6vw;
+  width: 100vw;
+  height: 85%;
   background: #0891b3;
-  transform: skewY(-11deg);
+  transform: skewY(-24deg);
   transform-origin: top left;
   z-index: -1;
   box-shadow: 1px 1px 7px #1f1f31;
-} */
+}
 
 .about-wrapper {
-  display: flex;
+  display: block;
   flex-wrap: wrap;
   align-items: center;
   margin: 0 6vw 60px;
 }
 
-.background-slanted {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  position: relative;
-  background: transparent;
-}
-
-.background-slanted::before {
-  content: "";
-  position: absolute;
-  top: -10vw;
-  left: -6vw;
-  width: 100vw;
-  height: 100%;
-  background: #0891b3;
-  transform: skewY(-32deg);
-  transform-origin: top left;
-  z-index: -1;
-  box-shadow: 1px 1px 7px #1f1f31;
-  margin: 0;
-}
-
-.background-slanted > .photo-container {
+.about-wrapper > .photo-container {
   display: inline-block;
   position: relative;
   width: 100%;
-  margin: 0 3vw;
-  z-index: 2;
+  padding: 0 3vw;
+  /* z-index: 2; */
 }
 
 .photo-container > .header-photo {
@@ -115,7 +87,7 @@ header::before {
   margin: 0;
   bottom: 36px;
   right: 0;
-  left: 2vw;
+  left: 6vw;
   text-align: left;
   transform: scaleY(1.1);
   letter-spacing: 2px;
@@ -126,12 +98,13 @@ header::before {
 
 .about-wrapper > .about-container {
   background: white;
-  max-width: 100%;
-  height: 100%;
+  width: 100%;
   padding: 0;
   box-shadow: none;
 }
-
+.spacer {
+  display: none;
+}
 .about-card {
   overflow: auto;
 }
@@ -277,6 +250,7 @@ p.contact-text {
 @media (min-width: 601px) {
   .about-wrapper {
     margin: 0 1vw 1vh;
+    height: 55vh;
   }
   main {
     margin: 0 2vw 1vh;
@@ -284,40 +258,56 @@ p.contact-text {
   .contact-container {
     margin: 0 2vw;
   }
-  .background-slanted::before {
+  .section-title {
+    font-size: 2.5rem;
+  }
+  .about-wrapper > .photo-container::before {
+    position: absolute;
     top: 0;
     left: -1vw;
-    transform: skewY(-18deg);
+    transform: skewY(-16deg);
+    height: 100%;
+    z-index: -1;
   }
-  .background-slanted > .photo-container {
+  .about-wrapper > .photo-container {
+    background: transparent;
     width: 49vw;
-    margin: 0 3vw;
   }
   .photo-container > .name {
-    color: white;
-    position: absolute;
     margin: 0;
-    bottom: 50vw;
-    left: 39.5vw;
+    bottom: 42vw;
+    left: 42vw;
     text-align: right;
-    font-size: 6.2vw;
+    font-size: 7.5vw;
+    text-wrap: nowrap;
   }
   .about-wrapper > .about-container {
-    display: inline-block;
+    display: block;
     background: white;
     position: relative;
-    top: -30vw;
-    width: 100%;
+    top: -40vw;
+    left: 5vw;
+    width: 90%;
     padding: 0;
     box-shadow: 1px 1px 7px #1f1f31;
     margin: 0 3vw;
-    z-index: 1;
+    z-index: -1;
+  }
+  .spacer {
+    display: block;
+    width: 38vw;
+    height: 34vw;
+    float: left;
   }
   .about-card {
-    margin: 4vw;
+    padding: 2vw;
   }
   .about-card > .section-title {
-    margin-top: 10vw;
+    margin-top: 3rem;
+  }
+  .about-card > .links-line {
+    justify-content: right;
+    padding-right: 6vw;
   }
 }
 
