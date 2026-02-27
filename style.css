@@ -60,8 +60,6 @@ a {
 
 .about-wrapper {
   display: block;
-  flex-wrap: wrap;
-  align-items: center;
   margin: 0 6vw 60px;
 }
 
@@ -134,7 +132,7 @@ main {
   flex-direction: column;
   gap: 2rem;
   justify-content: center;
-  margin: 0 6vw 200px;
+  margin: 100px 6vw 200px;
 }
 
 .section-title {
@@ -249,7 +247,7 @@ p.contact-text {
 /* Tablet size */
 @media (min-width: 601px) {
   header {
-    height: min(45rem, 60vh);
+    height: 100%;
   }
   .about-wrapper {
     margin: 0 1vw;
@@ -287,7 +285,7 @@ p.contact-text {
     width: 84%;
     padding: 0;
     box-shadow: 1px 1px 7px #1f1f31;
-    margin: 0 3vw;
+    margin: 0 3vw -40vw;
     z-index: -1;
   }
   .spacer {
@@ -307,7 +305,7 @@ p.contact-text {
     padding-right: 6vw;
   }
   main {
-    margin: 0 7vw 165px;
+    margin: 100px 7vw 165px;
   }
   main > .section-title {
     text-align: left;
@@ -344,11 +342,86 @@ p.contact-text {
 
 /* Desktop size */
 @media (min-width: 1201px) {
-  .about-wrapper,
-  main {
-    margin: 0 18vw 1vh; /* TODO: adjust values */
+  header,
+  main,
+  footer {
+    padding: 0 max(5rem, calc((100vw - 1480px)) / 2);
+    margin-left: 0;
+    margin-right: 0;
   }
-  .contact-container {
-    margin: 0 18vw; /* TODO: adjust values */
+  header {
+    height: 100%;
+  }
+  header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 800px;
+    background: #0891b3;
+    transform: skewY(-15deg);
+    transform-origin: top left;
+    z-index: -1;
+    box-shadow: 1px 1px 7px #1f1f31;
+  }
+  .about-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  .about-wrapper > .photo-container,
+  .about-wrapper > .about-container {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  .about-wrapper > .photo-container {
+    padding-left: 0;
+    padding-right: 0;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  .header-photo {
+    max-width: 526px;
+  }
+  .about-wrapper > .about-container {
+    display: block;
+    margin: 20px 20px 20px 0;
+    width: 100%;
+    z-index: 0;
+  }
+  .about-wrapper > .photo-container::before {
+    display: none;
+  }
+  .photo-container > .name {
+    inset: 83% 0 0 -2%;
+    text-align: right;
+    font-size: 68px;
+    text-shadow: 2px 2px 11px #5e5e5b;
+  }
+  .spacer {
+    display: none;
+  }
+  .about-card > .section-title {
+    text-align: left;
+    margin-top: 0;
+  }
+  .about-card > .links-line {
+    padding: 0;
+  }
+  main {
+    margin-top: 100px;
+  }
+  .projects-wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  footer {
+    background: #0891b3;
+  }
+  .contact-wrapper > .photo-container {
+    max-width: 600px;
   }
 }
