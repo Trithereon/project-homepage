@@ -18,7 +18,16 @@
         <div class="photo-container">
           <img
             class="header-photo"
-            src="./assets/img/photos/EliottBourassa1-fullres.jpg"
+            loading="lazy"
+            sizes="(min-width: 1201px) 1100px, 
+            (min-width: 601px) 90vw, 
+            100vw"
+            srcset="
+              ./assets/img/photos/EliottBourassa1-262w.jpg   262w,
+              ./assets/img/photos/EliottBourassa1-826w.jpg   826w,
+              ./assets/img/photos/EliottBourassa1-1052w.jpg 1052w
+            "
+            src="./assets/img/photos/EliottBourassa1-262w.jpg"
             alt=""
           />
           <h1 class="name playfair-display-400">Eliott Bourassa</h1>
